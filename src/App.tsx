@@ -1,26 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+interface Param {
+  id: number;
+  name: string;
+  type: 'string';
+}
+
+interface ParamValue {
+  paramId: number;
+  value: string;
+}
+
+interface Color {
+  id: number;
+  name: string;
+}
+
+interface Model {
+  paramValues: ParamValue[];
+  colors: Color[];
+}
+
+interface EditorProps {
+  params: Param[];
+  model: Model;
+}
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Редактор параметров</h1>
     </div>
   );
-}
+};
 
 export default App;
